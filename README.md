@@ -13,6 +13,7 @@ I maintain this list as part of my work with DevOps, infrastructure automation, 
 ## Contents
 
 - [Learning Paths](#learning-paths)
+- [Practical Selection Guide](#practical-selection-guide)
 - [Core Libraries](#core-libraries)
 - [Object Detection](#object-detection)
 - [Segmentation](#segmentation)
@@ -48,6 +49,28 @@ I maintain this list as part of my work with DevOps, infrastructure automation, 
 - [Roboflow Blog](https://blog.roboflow.com/) - Applied guides for datasets, annotation, YOLO, deployment, and evaluation.
 - [Ultralytics Docs](https://docs.ultralytics.com/) - YOLO training, prediction, export, tracking, and deployment docs.
 - [OpenMMLab Docs](https://openmmlab.com/) - Documentation and projects for detection, segmentation, pose, tracking, and deployment.
+
+## Practical Selection Guide
+
+Use this quick map when choosing tools for a real project:
+
+| Scenario | Start with | Add when needed |
+| --- | --- | --- |
+| Fast object detection prototype | Ultralytics YOLO, Roboflow, OpenCV | SAHI for small objects, FiftyOne for error analysis |
+| Industrial inspection | OpenCV, HALCON, camera SDKs | calibration, controlled lighting, PLC or alert integration |
+| Fire and smoke monitoring | fire/smoke datasets, YOLO, video pipelines | temporal smoothing, weather-aware thresholds, human review |
+| Farm or rural camera deployment | RTSP, edge device, local queue | offline sync, camera health metrics, solar/power monitoring |
+| Large dataset cleanup | CVAT, Label Studio, FiftyOne | Cleanlab, DVC, active learning workflows |
+| Edge inference | ONNX Runtime, OpenVINO, TensorRT | model quantization, runtime benchmarks, watchdog monitoring |
+| Production monitoring | Prometheus, Grafana, Zabbix | drift checks, false positive review, alert fatigue metrics |
+
+Before moving from a notebook to production, validate:
+
+- camera placement, lens condition, frame rate, and night/day behavior
+- latency on the target hardware, not only on a development machine
+- false positives and false negatives by scene, camera, and time of day
+- recovery behavior after network, power, or RTSP stream failures
+- model version, dataset version, thresholds, and alert rules
 
 ## Core Libraries
 
