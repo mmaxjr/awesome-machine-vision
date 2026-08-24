@@ -41,3 +41,15 @@ Keep descriptions neutral and useful. Avoid hype words.
 
 Small pull requests are best. If you are adding many links, group them by section.
 
+## Review checklist
+
+Before opening a pull request, please check that:
+
+- the link works and points to the primary project, docs, paper, or dataset
+- the description explains the practical value in one sentence
+- the item is placed in the most specific section available
+- the entry does not duplicate an existing resource
+- commercial tools are clearly useful for machine vision work
+- production notes are based on practical deployment concerns, not hype
+
+For new sections, include a short introduction that explains when someone would use that category.
