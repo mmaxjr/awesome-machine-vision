@@ -15,6 +15,7 @@ I maintain this list as part of my work with DevOps, infrastructure automation, 
 - [Learning Paths](#learning-paths)
 - [Practical Selection Guide](#practical-selection-guide)
 - [Core Libraries](#core-libraries)
+- [Recent Developments](#recent-developments)
 - [Object Detection](#object-detection)
 - [Segmentation](#segmentation)
 - [Tracking](#tracking)
@@ -34,6 +35,7 @@ I maintain this list as part of my work with DevOps, infrastructure automation, 
 - [Edge AI Hardware](#edge-ai-hardware)
 - [Video Analytics and Streaming](#video-analytics-and-streaming)
 - [Deployment Patterns](#deployment-patterns)
+- [Production Readiness Checklist](#production-readiness-checklist)
 - [Monitoring Production Vision Systems](#monitoring-production-vision-systems)
 - [Security, Privacy, and Responsible AI](#security-privacy-and-responsible-ai)
 - [Useful Awesome Lists](#useful-awesome-lists)
@@ -83,6 +85,21 @@ Before moving from a notebook to production, validate:
 - [TorchVision](https://github.com/pytorch/vision) - PyTorch datasets, transforms, models, and vision utilities.
 - [TensorFlow Image](https://www.tensorflow.org/api_docs/python/tf/image) - TensorFlow image operations.
 - [JAX Image](https://jax.readthedocs.io/en/latest/_autosummary/jax.image.html) - Image utilities for JAX workflows.
+
+## Recent Developments
+
+Resources reviewed on 2026-10-07 for current model and deployment directions:
+
+- [YOLO26 model documentation](https://docs.ultralytics.com/models/) - Current Ultralytics model family covering detection, segmentation, semantic segmentation, depth, classification, pose, and oriented bounding boxes, with export paths for edge deployment.
+- [SAM 3](https://github.com/facebookresearch/sam3) - Promptable concept segmentation for images and video using text or visual examples. Check the repository license and access requirements before using it in a product.
+- [RT-DETRv4](https://github.com/chengruchou/RT-DETRv4) - Real-time detection research direction using vision foundation models for distillation and improved detector performance.
+- [D-FINE](https://github.com/Peterande/D-FINE) - Real-time DETR detector based on fine-grained distribution refinement, with an emphasis on localization quality without additional inference cost.
+- [RF-DETR](https://github.com/roboflow/rf-detr) - Real-time transformer detector with training and deployment workflows for custom datasets. Review the model and weight licenses separately.
+- [Open Edge Platform Geti](https://github.com/open-edge-platform/geti) - Local platform for creating, training, optimizing, and deploying computer vision models, including OpenVINO-based export and video pipelines.
+- [GLEE](https://github.com/FoundationVision/GLEE) - General object foundation model for image and video tasks, including open-world detection, tracking, and segmentation.
+- [Vision-Language Models for Edge Networks](https://arxiv.org/abs/2502.07855) - Survey of compression, quantization, distillation, hardware, privacy, and deployment constraints for VLMs at the edge.
+
+When evaluating a new model, compare more than benchmark accuracy: measure latency on the target hardware, memory use, power draw, licensing, export stability, calibration, false-alert rate, and behavior under the actual camera conditions.
 
 ## Object Detection
 
@@ -350,6 +367,29 @@ monitoring dashboard       WhatsApp/SMS/email/radio workflow
         v
 logs, clips, false positive review, retraining dataset
 ```
+
+## Production Readiness Checklist
+
+Use this checklist before moving a machine vision pipeline from a demo to a
+production camera or edge device:
+
+- **Define the decision:** document the classes, confidence thresholds, alert
+  cooldowns, and which cases require human confirmation.
+- **Validate representative data:** test day/night, rain, fog, glare, camera
+  movement, occlusion, seasonal changes, and the actual camera placement.
+- **Measure the pipeline:** record end-to-end latency, throughput, dropped
+  frames, reconnects, and resource usage rather than model accuracy alone.
+- **Handle degraded operation:** define behavior for a disconnected camera,
+  full disk, unavailable model service, stale frames, and loss of upstream
+  connectivity.
+- **Keep evidence traceable:** retain model, dataset, configuration, and
+  deployment versions with each alert and review false positives and false
+  negatives regularly.
+- **Test alert delivery:** verify retries, deduplication, escalation, and a
+  clear recovery path before relying on the system for safety decisions.
+- **Plan updates and rollback:** stage model or threshold changes, compare
+  them against a fixed evaluation set, and keep the previous deployment ready
+  to restore.
 
 ## Monitoring Production Vision Systems
 
