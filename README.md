@@ -92,6 +92,8 @@ Resources reviewed on 2026-10-07 for current model and deployment directions:
 
 - [YOLO26 model documentation](https://docs.ultralytics.com/models/) - Current Ultralytics model family covering detection, segmentation, semantic segmentation, depth, classification, pose, and oriented bounding boxes, with export paths for edge deployment.
 - [SAM 3](https://github.com/facebookresearch/sam3) - Promptable concept segmentation for images and video using text or visual examples. Check the repository license and access requirements before using it in a product.
+- [SAM 3D Objects](https://github.com/facebookresearch/sam-3d-objects) - Image-to-3D reconstruction of object shape, texture, and layout, useful for inspection, simulation, and 3D asset workflows.
+- [sam3.cpp](https://github.com/PABannier/sam3.cpp) - Portable C++ inference for SAM 2, SAM 3, and EdgeTAM with CPU and Apple Metal paths, quantized models, and video tracking.
 - [RT-DETRv4](https://github.com/chengruchou/RT-DETRv4) - Real-time detection research direction using vision foundation models for distillation and improved detector performance.
 - [D-FINE](https://github.com/Peterande/D-FINE) - Real-time DETR detector based on fine-grained distribution refinement, with an emphasis on localization quality without additional inference cost.
 - [RF-DETR](https://github.com/roboflow/rf-detr) - Real-time transformer detector with training and deployment workflows for custom datasets. Review the model and weight licenses separately.
@@ -100,6 +102,11 @@ Resources reviewed on 2026-10-07 for current model and deployment directions:
 - [Vision-Language Models for Edge Networks](https://arxiv.org/abs/2502.07855) - Survey of compression, quantization, distillation, hardware, privacy, and deployment constraints for VLMs at the edge.
 
 When evaluating a new model, compare more than benchmark accuracy: measure latency on the target hardware, memory use, power draw, licensing, export stability, calibration, false-alert rate, and behavior under the actual camera conditions.
+
+For a stronger shortlist, record the date reviewed, upstream repository, license,
+supported hardware, model size, input resolution, and whether the project has a
+working inference example. Treat benchmark numbers as directional until they
+are reproduced on the target camera and hardware.
 
 ## Object Detection
 
@@ -453,6 +460,9 @@ Before adding a link, check:
 
 - Is the project active or still useful?
 - Does it solve a real computer vision problem?
+- Is the upstream link, license, and installation path still valid?
+- Does the entry explain the practical use case instead of only repeating the project name?
+- Were model size, hardware requirements, and access restrictions checked?
 - Is the description clear and neutral?
 - Is it open source, documented, or widely used?
 - Would it help someone building, deploying, monitoring, or maintaining a vision system?
