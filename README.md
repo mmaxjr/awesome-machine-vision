@@ -14,6 +14,7 @@ I maintain this list as part of my work with DevOps, infrastructure automation, 
 
 - [Learning Paths](#learning-paths)
 - [Practical Selection Guide](#practical-selection-guide)
+- [Model Evaluation Scorecard](#model-evaluation-scorecard)
 - [Core Libraries](#core-libraries)
 - [Recent Developments](#recent-developments)
 - [Object Detection](#object-detection)
@@ -73,6 +74,33 @@ Before moving from a notebook to production, validate:
 - false positives and false negatives by scene, camera, and time of day
 - recovery behavior after network, power, or RTSP stream failures
 - model version, dataset version, thresholds, and alert rules
+
+## Model Evaluation Scorecard
+
+Use the same scorecard when comparing models or deciding whether a model is
+ready for a new camera. Report the hardware, input resolution, batch size,
+runtime, and dataset split together with each result.
+
+| Area | What to record | Why it matters |
+| --- | --- | --- |
+| Detection quality | precision, recall, F1, mAP, and per-class results | A single average can hide a weak smoke or fire class. |
+| Alert behavior | false alerts per camera-hour, missed events, time to alert | Safety workflows depend on event behavior, not only frame accuracy. |
+| Performance | p50/p95 latency, FPS, cold-start time, and queue depth | A model must keep up with the camera stream under real load. |
+| Resource use | peak RAM/VRAM, CPU/GPU use, disk growth, and power draw | Edge devices have fixed thermal, memory, and energy budgets. |
+| Robustness | day/night, weather, glare, occlusion, blur, camera movement, and compression | Production conditions differ from a clean validation set. |
+| Operations | model version, threshold configuration, rollback path, and alert delivery status | Results need to be reproducible and recoverable. |
+
+Good evaluation practices:
+
+- Split data by camera, location, or time window when possible; random frame
+  splits can leak nearly identical video frames into training and validation.
+- Keep a fixed holdout set that is not used for threshold tuning.
+- Report confidence thresholds and class definitions with the metrics.
+- Review false positives and false negatives by scenario, not only in aggregate.
+- Benchmark the exported artifact (ONNX, OpenVINO, TensorRT, or another
+  runtime), not just the training framework's in-memory model.
+- Re-run a small representative benchmark after every model, runtime, or
+  camera change.
 
 ## Core Libraries
 
