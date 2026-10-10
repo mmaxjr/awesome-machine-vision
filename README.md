@@ -47,7 +47,6 @@ I maintain this list as part of my work with DevOps, infrastructure automation, 
 
 - [OpenCV University](https://opencv.org/university/) - Courses and articles for computer vision and OpenCV.
 - [CS231n: Deep Learning for Computer Vision](https://cs231n.stanford.edu/) - Classic Stanford course for image classification, CNNs, detection, and visual recognition.
-- [Deep Learning for Computer Vision, Michigan](https://web.eecs.umich.edu/~justincj/teaching/eecs498/WI2022/) - Practical lecture material for modern vision.
 - [PyImageSearch](https://pyimagesearch.com/) - Tutorials covering OpenCV, object detection, OCR, and deployment.
 - [LearnOpenCV](https://learnopencv.com/) - Practical OpenCV and deep learning computer vision tutorials.
 - [Roboflow Blog](https://blog.roboflow.com/) - Applied guides for datasets, annotation, YOLO, deployment, and evaluation.
@@ -109,11 +108,11 @@ Good evaluation practices:
 - [scikit-image](https://github.com/scikit-image/scikit-image) - Image processing algorithms for Python.
 - [Pillow](https://github.com/python-pillow/Pillow) - Python Imaging Library fork for basic image handling.
 - [Kornia](https://github.com/kornia/kornia) - Differentiable computer vision library for PyTorch.
-- [Albumentations](https://github.com/albumentations-team/albumentations) - Fast image augmentation library widely used for detection and segmentation.
-- [imgaug](https://github.com/aleju/imgaug) - Image augmentation for machine learning experiments.
+- [Albumentations](https://github.com/albumentations-team/albumentations) - Fast image augmentation library widely used for detection and segmentation. Repository is archived.
+- [imgaug](https://github.com/aleju/imgaug) - Image augmentation for machine learning experiments. No longer actively maintained.
 - [TorchVision](https://github.com/pytorch/vision) - PyTorch datasets, transforms, models, and vision utilities.
 - [TensorFlow Image](https://www.tensorflow.org/api_docs/python/tf/image) - TensorFlow image operations.
-- [JAX Image](https://jax.readthedocs.io/en/latest/_autosummary/jax.image.html) - Image utilities for JAX workflows.
+- [JAX Image](https://docs.jax.dev/en/latest/jax.image.html) - Image utilities for JAX workflows.
 
 ## Recent Developments
 
@@ -148,16 +147,22 @@ are reproduced on the target camera and hardware.
 - [PaddleDetection](https://github.com/PaddlePaddle/PaddleDetection) - Detection toolbox from PaddlePaddle.
 - [RT-DETR](https://github.com/lyuwenyu/RT-DETR) - Real-time detection transformer.
 - [D-FINE](https://github.com/Peterande/D-FINE) - Detection foundation model for real-time object detection.
-- [DETR](https://github.com/facebookresearch/detr) - End-to-end object detection with transformers.
+- [DETR](https://github.com/facebookresearch/detr) - End-to-end object detection with transformers. Repository is archived; still the reference implementation.
+- [RF-DETR](https://github.com/roboflow/rf-detr) - Real-time detection transformer from Roboflow with a DINOv2 backbone.
+- [YOLO-World](https://github.com/AILab-CVC/YOLO-World) - Real-time open-vocabulary detection based on YOLO.
 - [Grounding DINO](https://github.com/IDEA-Research/GroundingDINO) - Open-set object detection with language prompts.
 - [OWLv2](https://huggingface.co/docs/transformers/model_doc/owlv2) - Open-vocabulary object detection model in Transformers.
 - [SAHI](https://github.com/obss/sahi) - Slicing aided hyper inference for small object detection in large images.
+- [Roboflow Inference](https://github.com/roboflow/inference) - Self-hostable inference server and pipelines for vision models and streams.
 - [Supervision](https://github.com/roboflow/supervision) - Reusable utilities for detections, annotations, tracking, zones, and counting.
 
 ## Segmentation
 
 - [Segment Anything](https://github.com/facebookresearch/segment-anything) - Promptable image segmentation model.
 - [Segment Anything 2](https://github.com/facebookresearch/sam2) - Segment Anything for images and videos.
+- [Segment Anything 3](https://github.com/facebookresearch/sam3) - Promptable concept segmentation and tracking in images and videos.
+- [DINOv2](https://github.com/facebookresearch/dinov2) - Self-supervised vision backbone for features, retrieval, and segmentation.
+- [Depth Anything V2](https://github.com/DepthAnything/Depth-Anything-V2) - Monocular depth estimation.
 - [MMSegmentation](https://github.com/open-mmlab/mmsegmentation) - OpenMMLab semantic segmentation toolbox.
 - [Detectron2](https://github.com/facebookresearch/detectron2) - Instance segmentation and panoptic segmentation.
 - [Segmentation Models PyTorch](https://github.com/qubvel-org/segmentation_models.pytorch) - PyTorch segmentation models with common encoders.
@@ -205,7 +210,7 @@ Resources for wildfire detection, farm monitoring, environmental risk, cameras i
 - [Smoke Detection topic on GitHub](https://github.com/topics/smoke-detection) - Repositories tagged with smoke detection.
 - [Forest Fire Detection topic on GitHub](https://github.com/topics/forest-fire-detection) - Repositories tagged with forest fire detection.
 - [Wildfire Detection topic on GitHub](https://github.com/topics/wildfire-detection) - Repositories tagged with wildfire detection.
-- [FIgLib and wildfire research datasets](https://github.com/DeepQuestAI/Fire-Smoke-Dataset) - Fire and smoke image resources.
+- [Fire-Smoke-Dataset](https://github.com/DeepQuestAI/Fire-Smoke-Dataset) - Image dataset for training fire and smoke detection models.
 - [HPWREN Cameras](https://hpwren.ucsd.edu/cameras/) - Public camera network used in wildfire research and monitoring.
 - [AlertWildfire](https://www.alertwildfire.org/) - Wildfire camera network and situational awareness system.
 
@@ -240,6 +245,9 @@ Practical notes for fire and smoke systems:
 - [GenICam](https://www.emva.org/standards-technology/genicam/) - Generic programming interface for machine vision cameras.
 - [Aravis](https://github.com/AravisProject/aravis) - Vision library for GenICam cameras.
 - [OpenPnP](https://github.com/openpnp/openpnp) - Open source SMT pick-and-place software with machine vision components.
+- [Anomalib](https://github.com/open-edge-platform/anomalib) - Anomaly detection library for visual inspection when defect samples are scarce.
+- [Open3D](https://github.com/isl-org/Open3D) - 3D data processing for point clouds, meshes, and RGB-D.
+- [PCL](https://github.com/PointCloudLibrary/pcl) - Point Cloud Library for 3D perception.
 - [OpenCV Calibration](https://docs.opencv.org/4.x/dc/dbb/tutorial_py_calibration.html) - Camera calibration basics.
 
 ## Datasets
@@ -283,7 +291,7 @@ Practical synthetic-data workflow:
 
 - [CVAT](https://github.com/cvat-ai/cvat) - Open source annotation tool for images and videos.
 - [Label Studio](https://github.com/HumanSignal/label-studio) - Multi-modal data labeling platform.
-- [LabelImg](https://github.com/HumanSignal/labelImg) - Simple graphical image annotation tool.
+- [LabelImg](https://github.com/HumanSignal/labelImg) - Simple graphical image annotation tool. Archived; Label Studio is the suggested successor.
 - [Labelme](https://github.com/wkentaro/labelme) - Polygon annotation tool.
 - [Roboflow Annotate](https://roboflow.com/annotate) - Hosted annotation and dataset workflow.
 - [VGG Image Annotator](https://www.robots.ox.ac.uk/~vgg/software/via/) - Lightweight browser-based annotation tool.
@@ -297,7 +305,7 @@ Practical synthetic-data workflow:
 - [FiftyOne](https://github.com/voxel51/fiftyone) - Dataset visualization, curation, evaluation, and error analysis.
 - [Cleanlab](https://github.com/cleanlab/cleanlab) - Find label errors and improve dataset quality.
 - [Lightly](https://github.com/lightly-ai/lightly) - Data curation and active learning for computer vision.
-- [DVC](https://github.com/iterative/dvc) - Version control for data and ML pipelines.
+- [DVC](https://github.com/iterative/dvc) - Version control for data and ML pipelines; also usable for pipeline versioning.
 - [LakeFS](https://github.com/treeverse/lakeFS) - Data lake version control.
 - [Datumaro](https://github.com/open-edge-platform/datumaro) - Dataset management, conversion, and transformation.
 - [FiftyOne Brain](https://docs.voxel51.com/user_guide/brain.html) - Similarity, uniqueness, and mistake analysis.
@@ -321,7 +329,6 @@ Practical synthetic-data workflow:
 - [MLflow](https://github.com/mlflow/mlflow) - Experiment tracking, model registry, and deployment workflows.
 - [Weights & Biases](https://wandb.ai/) - Experiment tracking and model monitoring.
 - [ClearML](https://github.com/clearml/clearml) - Experiment management, orchestration, and data management.
-- [DVC](https://github.com/iterative/dvc) - Data and pipeline versioning.
 - [Kubeflow](https://github.com/kubeflow/kubeflow) - ML workflows on Kubernetes.
 - [Metaflow](https://github.com/Netflix/metaflow) - Human-friendly ML workflows.
 - [ZenML](https://github.com/zenml-io/zenml) - MLOps framework for pipelines.
@@ -366,7 +373,7 @@ Production evaluation checklist:
 - [OpenVINO Runtime](https://docs.openvino.ai/) - Runtime for Intel CPUs, GPUs, VPUs, and edge hardware.
 - [ONNX Runtime](https://onnxruntime.ai/) - ONNX inference across CPU, GPU, mobile, and edge.
 - [TensorFlow Serving](https://github.com/tensorflow/serving) - Serving system for TensorFlow models.
-- [TorchServe](https://github.com/pytorch/serve) - Serving PyTorch models.
+- [TorchServe](https://github.com/pytorch/serve) - Serving PyTorch models. Repository is archived.
 - [OpenCV DNN](https://docs.opencv.org/4.x/d2/d58/tutorial_table_of_content_dnn.html) - Inference using OpenCV's DNN module.
 - [NVIDIA Jetson Inference](https://github.com/dusty-nv/jetson-inference) - Deep learning inference and training demos for Jetson.
 
@@ -380,7 +387,7 @@ Production evaluation checklist:
 - [Hailo](https://hailo.ai/) - AI accelerators for edge devices.
 - [Sony Spresense](https://developer.sony.com/spresense/) - Low-power board for edge sensing.
 - [ESP32-CAM](https://www.espressif.com/en/products/socs/esp32) - Low-cost microcontroller camera platform.
-- [Seeed Studio reComputer](https://www.seeedstudio.com/reComputer-Jetson-c-2703.html) - Jetson-based edge AI systems.
+- [Seeed Studio reComputer](https://www.seeedstudio.com/tag/nvidia.html) - Jetson-based edge AI systems.
 
 ## Video Analytics and Streaming
 
@@ -475,12 +482,11 @@ Useful metrics:
 
 ## Security, Privacy, and Responsible AI
 
-- [OWASP Machine Learning Security Top 10](https://owasp.org/www-project-machine-learning-security-top-10/) - Security risks for ML systems.
+- [OWASP Machine Learning Security Top 10](https://owasp.org/www-project-machine-learning-security-top-ten/) - Security risks for ML systems.
 - [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework) - AI risk management guidance.
 - [Model Cards](https://modelcards.withgoogle.com/about) - Documentation approach for model behavior and limits.
 - [Datasheets for Datasets](https://arxiv.org/abs/1803.09010) - Dataset documentation practice.
 - [Adversarial Robustness Toolbox](https://github.com/Trusted-AI/adversarial-robustness-toolbox) - Tools for adversarial ML robustness.
-- [Privacy Badger](https://privacybadger.org/) - Useful reference for privacy-aware systems.
 
 Responsible deployment checklist:
 
@@ -498,10 +504,10 @@ Responsible deployment checklist:
 - [awesome-object-detection](https://github.com/amusi/awesome-object-detection) - Object detection papers and resources.
 - [awesome-semantic-segmentation](https://github.com/mrgloom/awesome-semantic-segmentation) - Semantic segmentation resources.
 - [awesome-visual-transformer](https://github.com/dk-liang/Awesome-Visual-Transformer) - Vision transformer resources.
-- [awesome-edge-ai](https://github.com/ashishpatel26/awesome-edge-ai) - Edge AI resources.
+- [awesome-edge-ai](https://github.com/wangxb96/Awesome-EdgeAI) - Edge AI resources.
 - [awesome-mlops](https://github.com/visenger/awesome-mlops) - MLOps resources.
 - [awesome-production-machine-learning](https://github.com/EthicalML/awesome-production-machine-learning) - Production ML resources.
-- [awesome-opencv](https://github.com/sshkhr/awesome-opencv) - OpenCV resources.
+- [awesome-opencv](https://github.com/italojs/awesome-opencv) - OpenCV resources.
 
 ## Contributing
 
