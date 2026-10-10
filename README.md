@@ -26,6 +26,7 @@ I maintain this list as part of my work with DevOps, infrastructure automation, 
 - [Agriculture, Environment, and Remote Monitoring](#agriculture-environment-and-remote-monitoring)
 - [Industrial Machine Vision](#industrial-machine-vision)
 - [Datasets](#datasets)
+- [Synthetic Data and Simulation](#synthetic-data-and-simulation)
 - [Annotation Tools](#annotation-tools)
 - [Dataset Management and Data Quality](#dataset-management-and-data-quality)
 - [Training Frameworks](#training-frameworks)
@@ -255,6 +256,28 @@ Practical notes for fire and smoke systems:
 - [Kaggle Datasets](https://www.kaggle.com/datasets) - Public datasets for image classification, detection, and segmentation.
 - [Hugging Face Datasets](https://huggingface.co/datasets?modality=modality:image) - Image datasets hosted on Hugging Face.
 - [Papers With Code Datasets](https://paperswithcode.com/datasets) - Dataset index connected to papers and benchmarks.
+
+## Synthetic Data and Simulation
+
+Synthetic data is useful for rare, dangerous, expensive, or difficult-to-label
+scenarios. It should complement real images rather than replace validation on
+the cameras and environments where the model will operate.
+
+- [BlenderProc](https://github.com/DLR-RM/BlenderProc) - Procedural Blender pipeline for photorealistic training images, depth, normals, segmentation, and COCO or BOP annotations.
+- [Kubric](https://github.com/google-research/kubric) - Python framework for synthetic image and video datasets with ground truth such as instance segmentation, optical flow, and depth.
+- [Omniverse Replicator](https://docs.omniverse.nvidia.com/kit/docs/omni_replicator/latest/index.html) - NVIDIA framework for custom synthetic-data pipelines with randomizers, annotators, writers, and physically based scenes.
+- [Isaac Sim](https://github.com/isaac-sim/IsaacSim) - Robotics simulation platform that can use Replicator for synthetic perception data and testing.
+
+Practical synthetic-data workflow:
+
+1. Identify a real-world gap, such as smoke at night, glare, occlusion, or a
+   rare industrial defect.
+2. Generate varied scenes and annotations, changing lighting, camera pose,
+   materials, weather, scale, and background.
+3. Mix synthetic and real samples while keeping a real-only holdout set.
+4. Compare performance by scenario and inspect whether synthetic artifacts
+   are being used as shortcuts by the model.
+5. Validate the final exported model on real footage before deployment.
 
 ## Annotation Tools
 
