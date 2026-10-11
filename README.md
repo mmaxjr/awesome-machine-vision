@@ -37,6 +37,7 @@ I maintain this list as part of my work with DevOps, infrastructure automation, 
 - [Edge AI Hardware](#edge-ai-hardware)
 - [Video Analytics and Streaming](#video-analytics-and-streaming)
 - [Deployment Patterns](#deployment-patterns)
+- [Edge Deployment Decision Guide](#edge-deployment-decision-guide)
 - [Production Readiness Checklist](#production-readiness-checklist)
 - [Monitoring Production Vision Systems](#monitoring-production-vision-systems)
 - [Security, Privacy, and Responsible AI](#security-privacy-and-responsible-ai)
@@ -405,6 +406,28 @@ Production evaluation checklist:
 - Multi-camera deployment with per-camera thresholds and health checks.
 - Kubernetes deployment for centralized inference.
 - Offline-first deployment for rural areas with unstable connectivity.
+
+## Edge Deployment Decision Guide
+
+Choose the deployment shape from the operating constraints, not only from the
+model benchmark:
+
+| Constraint | Starting point | Important safeguards |
+| --- | --- | --- |
+| CPU-only or low-power device | OpenCV DNN, ONNX Runtime, or OpenVINO with a small model | Quantize, reduce input size, and measure thermal throttling. |
+| NVIDIA GPU or Jetson | TensorRT or an optimized vendor runtime | Pin CUDA/runtime versions and monitor GPU memory and temperature. |
+| Intel edge hardware | OpenVINO with CPU, GPU, or VPU targets | Benchmark each target and verify the exported operators. |
+| Apple Silicon | Core ML, Metal, or a portable C++ runtime | Test memory pressure and sustained performance, not only a short demo. |
+| Intermittent connectivity | Local inference, durable queue, and delayed synchronization | Make alerts idempotent and expose camera, queue, and disk health. |
+| Many centralized cameras | Inference service behind a queue or stream gateway | Apply backpressure, per-camera limits, and graceful reconnects. |
+
+Before choosing a runtime, answer:
+
+- Can the model be exported without changing its predictions materially?
+- What is the maximum acceptable alert delay for this use case?
+- Does the device have enough storage for clips, logs, and rollback artifacts?
+- What happens when the camera, network, model service, or alert provider fails?
+- Can an operator inspect the input frame and model version behind every alert?
 
 Example fire/smoke production architecture:
 
