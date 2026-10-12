@@ -16,6 +16,7 @@ I maintain this list as part of my work with DevOps, infrastructure automation, 
 - [Practical Selection Guide](#practical-selection-guide)
 - [Model Evaluation Scorecard](#model-evaluation-scorecard)
 - [Core Libraries](#core-libraries)
+- [Camera Calibration and Image Quality](#camera-calibration-and-image-quality)
 - [Recent Developments](#recent-developments)
 - [Object Detection](#object-detection)
 - [Segmentation](#segmentation)
@@ -115,6 +116,29 @@ Good evaluation practices:
 - [TorchVision](https://github.com/pytorch/vision) - PyTorch datasets, transforms, models, and vision utilities.
 - [TensorFlow Image](https://www.tensorflow.org/api_docs/python/tf/image) - TensorFlow image operations.
 - [JAX Image](https://jax.readthedocs.io/en/latest/_autosummary/jax.image.html) - Image utilities for JAX workflows.
+
+## Camera Calibration and Image Quality
+
+Model quality depends on the quality and consistency of the image reaching the
+inference pipeline. Calibrate the camera and monitor the signal before tuning
+confidence thresholds or changing models.
+
+- [OpenCV Camera Calibration](https://docs.opencv.org/4.x/dc/dbb/tutorial_py_calibration.html) - Intrinsic and extrinsic calibration, distortion correction, and pose estimation.
+- [OpenCV ArUco](https://docs.opencv.org/4.x/d5/dae/tutorial_aruco_detection.html) - Fiducial markers for camera pose, scale, and repeatable scene references.
+- [libcamera](https://libcamera.org/) - Camera support library for Linux systems and embedded devices.
+- [GStreamer Camera Pipelines](https://gstreamer.freedesktop.org/documentation/) - Composable capture, conversion, buffering, and streaming pipelines.
+
+Image-quality checks worth collecting per camera:
+
+- exposure, brightness, contrast, blur, focus, and saturation rate;
+- dropped frames, decode errors, reconnects, and timestamp gaps;
+- resolution, aspect ratio, frame rate, codec, and keyframe interval;
+- lens obstruction, camera movement, scene change, and night/day state;
+- a small diagnostic frame or quality summary attached to camera-health alerts.
+
+For calibrated scenes, store the calibration version and camera pose with the
+deployment. Re-run calibration after moving the camera, changing the lens, or
+changing the region of interest.
 
 ## Recent Developments
 
