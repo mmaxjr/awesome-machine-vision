@@ -37,6 +37,7 @@ I maintain this list as part of my work with DevOps, infrastructure automation, 
 - [Inference Runtimes](#inference-runtimes)
 - [Edge AI Hardware](#edge-ai-hardware)
 - [Video Analytics and Streaming](#video-analytics-and-streaming)
+- [Temporal Event Reasoning](#temporal-event-reasoning)
 - [Deployment Patterns](#deployment-patterns)
 - [Edge Deployment Decision Guide](#edge-deployment-decision-guide)
 - [Production Readiness Checklist](#production-readiness-checklist)
@@ -418,6 +419,35 @@ Production evaluation checklist:
 - [WebRTC](https://webrtc.org/) - Real-time browser video transport.
 - [RTSP](https://en.wikipedia.org/wiki/Real_Time_Streaming_Protocol) - Common IP camera streaming protocol.
 - [SRS](https://github.com/ossrs/srs) - Simple Realtime Server for streaming.
+
+## Temporal Event Reasoning
+
+A detector produces observations per frame, but an operational system usually
+needs to decide whether a sustained event happened. Temporal logic can reduce
+alerts caused by one bad frame, compression artifacts, reflections, or brief
+occlusions.
+
+Useful building blocks:
+
+- **Persistence:** require a class to be present for a minimum number of frames
+  or seconds before opening an event.
+- **Hysteresis:** use a higher threshold to open an alert and a lower threshold
+  to close it, preventing rapid state changes near the decision boundary.
+- **Temporal smoothing:** aggregate confidence with a moving average, median,
+  or exponential decay instead of trusting one frame.
+- **Track continuity:** associate detections with a track and require stable
+  position, size, or direction before applying a rule.
+- **Cooldown and deduplication:** avoid sending repeated notifications for the
+  same event while preserving the full event timeline.
+- **Evidence windows:** retain frames before and after the trigger so an
+  operator can verify what happened.
+- **State machines:** model transitions such as `clear -> suspected ->
+  confirmed -> recovered` and record why each transition occurred.
+
+For every temporal rule, document the sampling rate, minimum duration, opening
+and closing thresholds, cooldown, missing-frame behavior, and test scenarios.
+Test both persistent events and near-misses such as a brief smoke-like shadow,
+a person crossing the scene, or a single corrupted frame.
 
 ## Deployment Patterns
 
