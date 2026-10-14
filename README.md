@@ -30,6 +30,7 @@ I maintain this list as part of my work with DevOps, infrastructure automation, 
 - [Synthetic Data and Simulation](#synthetic-data-and-simulation)
 - [Annotation Tools](#annotation-tools)
 - [Dataset Management and Data Quality](#dataset-management-and-data-quality)
+- [Reproducible Vision Experiments](#reproducible-vision-experiments)
 - [Training Frameworks](#training-frameworks)
 - [Experiment Tracking and MLOps](#experiment-tracking-and-mlops)
 - [Model Evaluation](#model-evaluation)
@@ -328,6 +329,40 @@ Practical synthetic-data workflow:
 - [Datumaro](https://github.com/open-edge-platform/datumaro) - Dataset management, conversion, and transformation.
 - [FiftyOne Brain](https://docs.voxel51.com/user_guide/brain.html) - Similarity, uniqueness, and mistake analysis.
 - [Roboflow](https://roboflow.com/) - Dataset hosting, conversion, augmentation, and deployment workflows.
+
+## Reproducible Vision Experiments
+
+Vision results are difficult to compare when the data split, preprocessing,
+runtime, or threshold changes silently. Keep a small experiment manifest with
+every training, evaluation, and deployment candidate.
+
+Record at least:
+
+- dataset name, version, split strategy, class definitions, and label policy;
+- source-camera or location groups used for train, validation, and holdout;
+- model repository, commit or release, checkpoint hash, and export format;
+- image size, preprocessing, augmentation, confidence threshold, and NMS settings;
+- Python, CUDA, driver, runtime, and hardware versions;
+- random seeds, batch size, precision, number of workers, and evaluation command;
+- quality metrics, latency metrics, resource use, and known failure scenarios;
+- reviewer, date, approval status, and the artifact location.
+
+A useful minimum artifact set is:
+
+```text
+experiments/<name>/
+  manifest.yaml
+  metrics.json
+  confusion-matrix.png
+  examples/false-positive-*.jpg
+  examples/false-negative-*.jpg
+  model.sha256
+```
+
+Never compare two models only from screenshots or a single aggregate score.
+Keep the holdout data unchanged, publish the exact evaluation command, and
+include representative failure examples so another person can reproduce the
+decision.
 
 ## Training Frameworks
 
