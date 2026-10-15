@@ -26,6 +26,7 @@ I maintain this list as part of my work with DevOps, infrastructure automation, 
 - [Fire and Smoke Detection](#fire-and-smoke-detection)
 - [Agriculture, Environment, and Remote Monitoring](#agriculture-environment-and-remote-monitoring)
 - [Industrial Machine Vision](#industrial-machine-vision)
+- [Visual Anomaly Detection](#visual-anomaly-detection)
 - [Datasets](#datasets)
 - [Synthetic Data and Simulation](#synthetic-data-and-simulation)
 - [Annotation Tools](#annotation-tools)
@@ -144,7 +145,7 @@ changing the region of interest.
 
 ## Recent Developments
 
-Resources reviewed on 2026-10-07 for current model and deployment directions:
+Resources reviewed on 2026-10-15 for current model and deployment directions:
 
 - [YOLO26 model documentation](https://docs.ultralytics.com/models/) - Current Ultralytics model family covering detection, segmentation, semantic segmentation, depth, classification, pose, and oriented bounding boxes, with export paths for edge deployment.
 - [SAM 3](https://github.com/facebookresearch/sam3) - Promptable concept segmentation for images and video using text or visual examples. Check the repository license and access requirements before using it in a product.
@@ -268,6 +269,25 @@ Practical notes for fire and smoke systems:
 - [Aravis](https://github.com/AravisProject/aravis) - Vision library for GenICam cameras.
 - [OpenPnP](https://github.com/openpnp/openpnp) - Open source SMT pick-and-place software with machine vision components.
 - [OpenCV Calibration](https://docs.opencv.org/4.x/dc/dbb/tutorial_py_calibration.html) - Camera calibration basics.
+
+## Visual Anomaly Detection
+
+Visual anomaly detection is useful when defective examples are rare, expensive,
+or constantly changing. In many inspection systems, training mostly on normal
+examples can be more practical than maintaining a complete defect taxonomy.
+
+- [Anomalib](https://github.com/open-edge-platform/anomalib) - Open source library for anomaly detection with experiment management, modern algorithms, and edge inference support.
+- [PatchCore Inspection](https://github.com/amazon-science/patchcore-inspection) - Reference implementation of PatchCore for industrial anomaly detection and localization.
+- [MVTec AD](https://www.mvtec.com/company/research/datasets/mvtec-ad) - Industrial anomaly detection benchmark with normal and defective images, pixel-level annotations, and multiple object and texture categories.
+- [SPot-the-Difference](https://github.com/amazon-science/spot-diff) - Self-supervised pre-training and anomaly detection research for image-level and pixel-level industrial inspection.
+
+Practical evaluation notes:
+
+- Separate image-level detection from pixel-level localization; report both when the system guides inspection.
+- Keep a defect-free validation split and a real-world holdout containing lighting, camera, material, and pose changes.
+- Measure false alarms per inspected item or camera-hour, not only AUROC.
+- Test whether the model detects the defect itself instead of shortcuts such as background, fixture, or illumination.
+- Set an escalation policy for uncertain samples so operators can review new defect types and feed them back into the dataset.
 
 ## Datasets
 
