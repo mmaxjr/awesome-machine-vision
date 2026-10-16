@@ -26,6 +26,7 @@ I maintain this list as part of my work with DevOps, infrastructure automation, 
 - [Fire and Smoke Detection](#fire-and-smoke-detection)
 - [Agriculture, Environment, and Remote Monitoring](#agriculture-environment-and-remote-monitoring)
 - [Industrial Machine Vision](#industrial-machine-vision)
+- [3D Vision and Robotics](#3d-vision-and-robotics)
 - [Visual Anomaly Detection](#visual-anomaly-detection)
 - [Datasets](#datasets)
 - [Synthetic Data and Simulation](#synthetic-data-and-simulation)
@@ -145,7 +146,7 @@ changing the region of interest.
 
 ## Recent Developments
 
-Resources reviewed on 2026-10-15 for current model and deployment directions:
+Resources reviewed on 2026-10-16 for current model and deployment directions:
 
 - [YOLO26 model documentation](https://docs.ultralytics.com/models/) - Current Ultralytics model family covering detection, segmentation, semantic segmentation, depth, classification, pose, and oriented bounding boxes, with export paths for edge deployment.
 - [SAM 3](https://github.com/facebookresearch/sam3) - Promptable concept segmentation for images and video using text or visual examples. Check the repository license and access requirements before using it in a product.
@@ -269,6 +270,23 @@ Practical notes for fire and smoke systems:
 - [Aravis](https://github.com/AravisProject/aravis) - Vision library for GenICam cameras.
 - [OpenPnP](https://github.com/openpnp/openpnp) - Open source SMT pick-and-place software with machine vision components.
 - [OpenCV Calibration](https://docs.opencv.org/4.x/dc/dbb/tutorial_py_calibration.html) - Camera calibration basics.
+
+## 3D Vision and Robotics
+
+Use 3D tools when image appearance alone is not enough, such as for depth,
+object pose, spatial measurement, manipulation, and robot perception.
+
+- [Open3D](https://github.com/isl-org/Open3D) - Modern library for point clouds, RGB-D data, 3D reconstruction, registration, visualization, and geometry processing.
+- [PyTorch3D](https://github.com/facebookresearch/pytorch3d) - Reusable PyTorch components for 3D data, differentiable rendering, meshes, point clouds, and camera geometry.
+- [Isaac Lab](https://github.com/isaac-sim/IsaacLab) - Framework for robot learning with physics simulation, synthetic perception data, and GPU-accelerated environments.
+
+Practical 3D evaluation notes:
+
+- Record the depth sensor, calibration version, coordinate frame, and units with every result.
+- Validate depth quality under reflective, transparent, low-light, and outdoor conditions.
+- Measure pose or reconstruction error separately from 2D detection accuracy.
+- Test synchronization between RGB, depth, IMU, and robot state before tuning the model.
+- Compare simulation results with real sensor data and keep a real-world holdout set.
 
 ## Visual Anomaly Detection
 
