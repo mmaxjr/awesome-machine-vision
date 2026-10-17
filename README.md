@@ -146,7 +146,7 @@ changing the region of interest.
 
 ## Recent Developments
 
-Resources reviewed on 2026-10-16 for current model and deployment directions:
+Resources reviewed on 2026-10-17 for current model and deployment directions:
 
 - [YOLO26 model documentation](https://docs.ultralytics.com/models/) - Current Ultralytics model family covering detection, segmentation, semantic segmentation, depth, classification, pose, and oriented bounding boxes, with export paths for edge deployment.
 - [SAM 3](https://github.com/facebookresearch/sam3) - Promptable concept segmentation for images and video using text or visual examples. Check the repository license and access requirements before using it in a product.
@@ -157,6 +157,7 @@ Resources reviewed on 2026-10-16 for current model and deployment directions:
 - [RF-DETR](https://github.com/roboflow/rf-detr) - Real-time transformer detector with training and deployment workflows for custom datasets. Review the model and weight licenses separately.
 - [Open Edge Platform Geti](https://github.com/open-edge-platform/geti) - Local platform for creating, training, optimizing, and deploying computer vision models, including OpenVINO-based export and video pipelines.
 - [GLEE](https://github.com/FoundationVision/GLEE) - General object foundation model for image and video tasks, including open-world detection, tracking, and segmentation.
+- [MoE-ViE](https://github.com/facebookresearch/moe_vie) - Mixture-of-Experts vision encoder for efficient image and video understanding, with zero-shot classification and image/video-text retrieval evaluation.
 - [Vision-Language Models for Edge Networks](https://arxiv.org/abs/2502.07855) - Survey of compression, quantization, distillation, hardware, privacy, and deployment constraints for VLMs at the edge.
 
 When evaluating a new model, compare more than benchmark accuracy: measure latency on the target hardware, memory use, power draw, licensing, export stability, calibration, false-alert rate, and behavior under the actual camera conditions.
