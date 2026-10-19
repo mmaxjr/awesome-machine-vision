@@ -146,7 +146,7 @@ changing the region of interest.
 
 ## Recent Developments
 
-Resources reviewed on 2026-10-18 for current model and deployment directions:
+Resources reviewed on 2026-10-19 for current model and deployment directions:
 
 - [YOLO26 model documentation](https://docs.ultralytics.com/models/) - Current Ultralytics model family covering detection, segmentation, semantic segmentation, depth, classification, pose, and oriented bounding boxes, with export paths for edge deployment.
 - [SAM 3](https://github.com/facebookresearch/sam3) - Promptable concept segmentation for images and video using text or visual examples. Check the repository license and access requirements before using it in a product.
@@ -159,6 +159,7 @@ Resources reviewed on 2026-10-18 for current model and deployment directions:
 - [GLEE](https://github.com/FoundationVision/GLEE) - General object foundation model for image and video tasks, including open-world detection, tracking, and segmentation.
 - [MoE-ViE](https://github.com/facebookresearch/moe_vie) - Mixture-of-Experts vision encoder for efficient image and video understanding, with zero-shot classification and image/video-text retrieval evaluation.
 - [Perception Models](https://github.com/facebookresearch/perception_models) - Open image, video, audio, and multimodal encoders, including spatial models for detection, depth estimation, and tracking.
+- [MVLM](https://github.com/inha-vllab/MVLM) - Template-free video tracking guided by natural-language descriptions, with confidence-aware re-localization and CPU inference support.
 - [Vision-Language Models for Edge Networks](https://arxiv.org/abs/2502.07855) - Survey of compression, quantization, distillation, hardware, privacy, and deployment constraints for VLMs at the edge.
 
 When evaluating a new model, compare more than benchmark accuracy: measure latency on the target hardware, memory use, power draw, licensing, export stability, calibration, false-alert rate, and behavior under the actual camera conditions.
