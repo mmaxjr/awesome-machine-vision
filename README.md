@@ -146,7 +146,7 @@ changing the region of interest.
 
 ## Recent Developments
 
-Resources reviewed on 2026-10-23 for current model and deployment directions:
+Resources reviewed on 2026-10-24 for current model and deployment directions:
 
 - [YOLO26 model documentation](https://docs.ultralytics.com/models/) - Current Ultralytics model family covering detection, segmentation, semantic segmentation, depth, classification, pose, and oriented bounding boxes, with export paths for edge deployment.
 - [SAM 3](https://github.com/facebookresearch/sam3) - Promptable concept segmentation for images and video using text or visual examples. Check the repository license and access requirements before using it in a product.
@@ -164,6 +164,7 @@ Resources reviewed on 2026-10-23 for current model and deployment directions:
 - [Live Vision Cosmos Demo](https://github.com/NVIDIA-AI-IOT/live-vision-cosmos-demo) - NVIDIA Jetson demo for running compact vision-language models locally in real time, useful for evaluating practical edge-vision pipelines.
 - [Computer Vision Engineering](https://github.com/usamahz/computer-vision-engineering) - Open learning path covering image formation, datasets, evaluation, detection, segmentation, video, 3D vision, VLMs, deployment, and robustness.
 - [cosmo-edge](https://github.com/cosmo-wander-ai/cosmo-edge) - C++ edge AI engine for real-time video analytics and on-device vision-language models across Rockchip, Sophon, and x86 hardware, with reproducible benchmarks.
+- [YOLO-Master](https://github.com/Tencent/YOLO-Master) - Official CVPR 2026 implementation combining mixture-of-experts and specialized Transformers for enhanced real-time object detection.
 - [Vision-Language Models for Edge Networks](https://arxiv.org/abs/2502.07855) - Survey of compression, quantization, distillation, hardware, privacy, and deployment constraints for VLMs at the edge.
 
 When evaluating a new model, compare more than benchmark accuracy: measure latency on the target hardware, memory use, power draw, licensing, export stability, calibration, false-alert rate, and behavior under the actual camera conditions.
