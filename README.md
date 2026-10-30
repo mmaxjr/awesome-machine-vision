@@ -146,7 +146,7 @@ changing the region of interest.
 
 ## Recent Developments
 
-Resources reviewed on 2026-10-29 for current model and deployment directions:
+Resources reviewed on 2026-10-30 for current model and deployment directions:
 
 - [YOLO26 model documentation](https://docs.ultralytics.com/models/) - Current Ultralytics model family covering detection, segmentation, semantic segmentation, depth, classification, pose, and oriented bounding boxes, with export paths for edge deployment.
 - [SAM 3](https://github.com/facebookresearch/sam3) - Promptable concept segmentation for images and video using text or visual examples. Check the repository license and access requirements before using it in a product.
@@ -169,6 +169,7 @@ Resources reviewed on 2026-10-29 for current model and deployment directions:
 - [Ultralytics Inference](https://github.com/ultralytics/inference) - Native Rust inference runtime with OpenVINO IR support for detection, segmentation, pose, depth, classification, and oriented bounding boxes on Intel CPU, GPU, and NPU devices.
 - [WeVisOne-VL](https://github.com/tencent/WeVisOne-VL) - Tencent vision-language model unifying detection, localization, counting, pointing, OCR, referring segmentation, and alpha matting with released weights and evaluation tools.
 - [SeC](https://github.com/OpenIXCLab/SeC) - Concept-driven framework for complex video object segmentation, using progressive concept construction and vision-language representations.
+- [VIRST](https://github.com/AIDASLab/VIRST) - Video-instructed reasoning assistant for spatiotemporal segmentation, with training and evaluation code for video-guided visual understanding.
 - [Vision-Language Models for Edge Networks](https://arxiv.org/abs/2502.07855) - Survey of compression, quantization, distillation, hardware, privacy, and deployment constraints for VLMs at the edge.
 
 When evaluating a new model, compare more than benchmark accuracy: measure latency on the target hardware, memory use, power draw, licensing, export stability, calibration, false-alert rate, and behavior under the actual camera conditions.
