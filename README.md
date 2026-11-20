@@ -146,7 +146,7 @@ changing the region of interest.
 
 ## Recent Developments
 
-Resources reviewed on 2026-11-19 for current model and deployment directions:
+Resources reviewed on 2026-11-20 for current model and deployment directions:
 
 - [YOLO26 model documentation](https://docs.ultralytics.com/models/) - Current Ultralytics model family covering detection, segmentation, semantic segmentation, depth, classification, pose, and oriented bounding boxes, with export paths for edge deployment.
 - [SAM 3](https://github.com/facebookresearch/sam3) - Promptable concept segmentation for images and video using text or visual examples. Check the repository license and access requirements before using it in a product.
@@ -189,6 +189,7 @@ Resources reviewed on 2026-11-19 for current model and deployment directions:
 - [Eagle](https://github.com/NVlabs/Eagle) - NVIDIA vision-language model family using data-centric training strategies, with released visual grounding work including LocateAnything.
 - [TIPS](https://github.com/google-deepmind/tips) - Image-text encoders with spatially aware pretraining for general-purpose computer vision and multimodal applications, including the TIPSv2 release.
 - [LagerNVS](https://github.com/facebookresearch/lagernvs) - Latent-geometry approach for fully neural, real-time novel-view synthesis from video, with released code and checkpoints for reconstructing and rendering dynamic scenes.
+- [MetaDepth](https://github.com/facebookresearch/metadepth) - Official monocular-geometry foundation models for metric depth, 3D point maps, and surface normals, including the high-resolution HyDen model and checkpoints.
 - [Vision-Language Models for Edge Networks](https://arxiv.org/abs/2502.07855) - Survey of compression, quantization, distillation, hardware, privacy, and deployment constraints for VLMs at the edge.
 
 When evaluating a new model, compare more than benchmark accuracy: measure latency on the target hardware, memory use, power draw, licensing, export stability, calibration, false-alert rate, and behavior under the actual camera conditions.
