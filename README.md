@@ -146,7 +146,7 @@ changing the region of interest.
 
 ## Recent Developments
 
-Resources reviewed on 2026-11-24 for current model and deployment directions:
+Resources reviewed on 2026-11-25 for current model and deployment directions:
 
 - [YOLO26 model documentation](https://docs.ultralytics.com/models/) - Current Ultralytics model family covering detection, segmentation, semantic segmentation, depth, classification, pose, and oriented bounding boxes, with export paths for edge deployment.
 - [SAM 3](https://github.com/facebookresearch/sam3) - Promptable concept segmentation for images and video using text or visual examples. Check the repository license and access requirements before using it in a product.
@@ -194,6 +194,7 @@ Resources reviewed on 2026-11-24 for current model and deployment directions:
 - [VLM³](https://github.com/facebookresearch/VLM3) - Vision-language model research showing how standard VLMs can support metric depth, pixel correspondence, camera-pose estimation, and object-level 3D understanding without extra encoders.
 - [WorldCrafter](https://github.com/TencentARC/WorldCrafter) - Camera-controlled video world model with implicit 3D-aware memory for consistent scene exploration across viewpoints and long horizons.
 - [VFlash](https://github.com/NVlabs/Eagle) - NVIDIA's fast visual-planning release using Flash Primitive Decoding, extending the Eagle project toward efficient vision-language action planning.
+- [WePocketModel](https://github.com/Tencent/WePocketModel) - Compact unified vision-language models for on-device multimodal applications, with 2B and 4B releases in Transformers and GGUF formats.
 - [Vision-Language Models for Edge Networks](https://arxiv.org/abs/2502.07855) - Survey of compression, quantization, distillation, hardware, privacy, and deployment constraints for VLMs at the edge.
 
 When evaluating a new model, compare more than benchmark accuracy: measure latency on the target hardware, memory use, power draw, licensing, export stability, calibration, false-alert rate, and behavior under the actual camera conditions.
