@@ -146,7 +146,7 @@ changing the region of interest.
 
 ## Recent Developments
 
-Resources reviewed on 2026-11-27 for current model and deployment directions:
+Resources reviewed on 2026-11-28 for current model and deployment directions:
 
 - [YOLO26 model documentation](https://docs.ultralytics.com/models/) - Current Ultralytics model family covering detection, segmentation, semantic segmentation, depth, classification, pose, and oriented bounding boxes, with export paths for edge deployment.
 - [SAM 3](https://github.com/facebookresearch/sam3) - Promptable concept segmentation for images and video using text or visual examples. Check the repository license and access requirements before using it in a product.
@@ -197,6 +197,7 @@ Resources reviewed on 2026-11-27 for current model and deployment directions:
 - [WePocketModel](https://github.com/Tencent/WePocketModel) - Compact unified vision-language models for on-device multimodal applications, with 2B and 4B releases in Transformers and GGUF formats.
 - [UniADet](https://github.com/gaobb/UniADet) - Language-free universal vision anomaly detection with released training, evaluation code, documentation, and pretrained weights for industrial inspection scenarios.
 - [SANA-Robot](https://github.com/NVlabs/Sana) - Open robotics world-action model release connecting visual world modeling, controllable rendering, and action-oriented interaction for embodied systems.
+- [Valen-Decision](https://github.com/Valen-Team/Valen) - Open multimodal decision models that answer visual questions with candidate probabilities and bounding boxes, with ONNX, GGUF, vLLM, and SGLang deployment paths.
 - [Vision-Language Models for Edge Networks](https://arxiv.org/abs/2502.07855) - Survey of compression, quantization, distillation, hardware, privacy, and deployment constraints for VLMs at the edge.
 
 When evaluating a new model, compare more than benchmark accuracy: measure latency on the target hardware, memory use, power draw, licensing, export stability, calibration, false-alert rate, and behavior under the actual camera conditions.
